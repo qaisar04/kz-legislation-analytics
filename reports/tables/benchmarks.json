@@ -1,0 +1,59 @@
+{
+  "loading": [
+    {
+      "approach": "CSV, object dtype (baseline)",
+      "seconds": 1.15,
+      "dataframe_mb": 625.09,
+      "peak_rss_mb": 899.1
+    },
+    {
+      "approach": "CSV, default pandas dtypes",
+      "seconds": 0.47,
+      "dataframe_mb": 353.57,
+      "peak_rss_mb": 1137.2
+    },
+    {
+      "approach": "CSV, chunked + optimised dtypes",
+      "seconds": 2.33,
+      "dataframe_mb": 203.05,
+      "peak_rss_mb": 806.8
+    },
+    {
+      "approach": "Parquet, all columns",
+      "seconds": 0.17,
+      "dataframe_mb": 203.07,
+      "peak_rss_mb": 688.3
+    },
+    {
+      "approach": "Parquet, 4 analysis columns",
+      "seconds": 0.13,
+      "dataframe_mb": 9.77,
+      "peak_rss_mb": 208.0
+    }
+  ],
+  "engines": [
+    {
+      "task": "yearly_counts",
+      "pandas_ms": 1.7,
+      "sqlite_ms": 9.1,
+      "same_row_count": true
+    },
+    {
+      "task": "repeal_rate_by_force",
+      "pandas_ms": 3.3,
+      "sqlite_ms": 89.1,
+      "same_row_count": true
+    },
+    {
+      "task": "top_areas",
+      "pandas_ms": 372.6,
+      "sqlite_ms": 21.8,
+      "same_row_count": true
+    }
+  ],
+  "file_sizes_mb": {
+    "csv": 321.2,
+    "parquet": 34.7,
+    "sqlite": 222.1
+  }
+}

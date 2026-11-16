@@ -1,0 +1,174 @@
+{
+  "ingest": {
+    "downloaded": false,
+    "rows": 215889,
+    "columns": 25,
+    "chunked_read_seconds": 3.02,
+    "optimized_memory_mb": 203.05,
+    "parquet_size_mb": 34.69
+  },
+  "audit": {
+    "constant_columns": [
+      "is_archive"
+    ],
+    "duplicate_law_id": 0,
+    "duplicate_titles": 53916,
+    "modified_before_adopted": 2,
+    "published_before_adopted": 1,
+    "date_adopted_min": "1947-10-30",
+    "date_adopted_max": "2026-07-20",
+    "repealed_share": 0.3471,
+    "multi_value": {
+      "act_form": {
+        "multi_value_share": 0.4256,
+        "max_values_per_act": 7,
+        "distinct_values": 75
+      },
+      "legal_relation_area": {
+        "multi_value_share": 0.7072,
+        "max_values_per_act": 12,
+        "distinct_values": 351
+      }
+    }
+  },
+  "database": {
+    "row_counts": {
+      "body": 4251,
+      "region": 2467,
+      "legal_force": 42,
+      "section": 37,
+      "area": 351,
+      "form": 75,
+      "act": 215889,
+      "act_area": 428099,
+      "act_form": 320143
+    },
+    "query_rows": {
+      "yearly_activity": 57,
+      "authority_share_by_year": 230,
+      "top_bodies_per_year": 81,
+      "areas_repeal_rate": 32,
+      "repeal_rate_by_form": 18,
+      "region_level_summary": 6,
+      "top_regions_per_level": 26,
+      "area_growth_periods": 15,
+      "monthly_seasonality": 12,
+      "bodies_above_type_average": 20,
+      "repeal_by_decade_authority": 24,
+      "amendment_lag": 10
+    }
+  },
+  "timeseries": {
+    "monthly_stats": {
+      "count": 408.0,
+      "mean": 525.1,
+      "std": 499.9,
+      "min": 4.0,
+      "25%": 164.8,
+      "50%": 305.5,
+      "75%": 818.5,
+      "max": 2995.0
+    },
+    "iqr_outlier_months": [
+      "2015-12-01",
+      "2020-12-01",
+      "2021-12-01",
+      "2022-12-01",
+      "2023-12-01",
+      "2024-12-01",
+      "2025-12-01"
+    ],
+    "forecast": [
+      {
+        "method": "seasonal naive",
+        "MAE": 207.3,
+        "MAPE_pct": 20.4,
+        "fit_predict_ms": 0.06
+      },
+      {
+        "method": "linear regression (trend+month)",
+        "MAE": 224.4,
+        "MAPE_pct": 24.1,
+        "fit_predict_ms": 3.11
+      },
+      {
+        "method": "moving average 12m",
+        "MAE": 374.2,
+        "MAPE_pct": 37.0,
+        "fit_predict_ms": 0.1
+      },
+      {
+        "method": "naive (baseline)",
+        "MAE": 1738.7,
+        "MAPE_pct": 191.6,
+        "fit_predict_ms": 0.01
+      }
+    ]
+  },
+  "sql_figures": [
+    "/Users/baltabaev/PycharmProjects/kz_legislation_analytics/reports/figures/01_yearly_activity.png",
+    "/Users/baltabaev/PycharmProjects/kz_legislation_analytics/reports/figures/06_repeal_rate.png",
+    "/Users/baltabaev/PycharmProjects/kz_legislation_analytics/reports/figures/05_authority_share.png",
+    "/Users/baltabaev/PycharmProjects/kz_legislation_analytics/reports/figures/10_top_areas.png",
+    "/Users/baltabaev/PycharmProjects/kz_legislation_analytics/reports/figures/interactive_authority.html"
+  ],
+  "benchmark": {
+    "loading": [
+      {
+        "approach": "CSV, object dtype (baseline)",
+        "seconds": 1.15,
+        "dataframe_mb": 625.09,
+        "peak_rss_mb": 899.1
+      },
+      {
+        "approach": "CSV, default pandas dtypes",
+        "seconds": 0.47,
+        "dataframe_mb": 353.57,
+        "peak_rss_mb": 1137.2
+      },
+      {
+        "approach": "CSV, chunked + optimised dtypes",
+        "seconds": 2.33,
+        "dataframe_mb": 203.05,
+        "peak_rss_mb": 806.8
+      },
+      {
+        "approach": "Parquet, all columns",
+        "seconds": 0.17,
+        "dataframe_mb": 203.07,
+        "peak_rss_mb": 688.3
+      },
+      {
+        "approach": "Parquet, 4 analysis columns",
+        "seconds": 0.13,
+        "dataframe_mb": 9.77,
+        "peak_rss_mb": 208.0
+      }
+    ],
+    "engines": [
+      {
+        "task": "yearly_counts",
+        "pandas_ms": 1.7,
+        "sqlite_ms": 9.1,
+        "same_row_count": true
+      },
+      {
+        "task": "repeal_rate_by_force",
+        "pandas_ms": 3.3,
+        "sqlite_ms": 89.1,
+        "same_row_count": true
+      },
+      {
+        "task": "top_areas",
+        "pandas_ms": 372.6,
+        "sqlite_ms": 21.8,
+        "same_row_count": true
+      }
+    ],
+    "file_sizes_mb": {
+      "csv": 321.2,
+      "parquet": 34.7,
+      "sqlite": 222.1
+    }
+  }
+}

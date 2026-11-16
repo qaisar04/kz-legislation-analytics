@@ -1,0 +1,180 @@
+{
+  "raw_issues": {
+    "source_id": {
+      "empty": 0,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "law_id": {
+      "empty": 0,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "date_adopted": {
+      "empty": 0,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "date_modified": {
+      "empty": 106980,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "date_published": {
+      "empty": 190769,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "state_registry_number": {
+      "empty": 30868,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "law_registry_number": {
+      "empty": 0,
+      "placeholder": 445,
+      "bad_date": 0
+    },
+    "gov_registration_number": {
+      "empty": 25126,
+      "placeholder": 54826,
+      "bad_date": 0
+    },
+    "ministry_registration_date": {
+      "empty": 186994,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "is_archive": {
+      "empty": 0,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "is_repealed": {
+      "empty": 0,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "adilet_url": {
+      "empty": 794,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "ekb_url": {
+      "empty": 33742,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "title": {
+      "empty": 0,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "description": {
+      "empty": 0,
+      "placeholder": 0,
+      "bad_date": 0
+    },
+    "official_publication_info": {
+      "empty": 951,
+      "placeholder": 40656,
+      "bad_date": 0
+    },
+    "act_form": {
+      "empty": 61,
+      "placeholder": 2,
+      "bad_date": 0
+    },
+    "legal_relation_area": {
+      "empty": 305,
+      "placeholder": 75,
+      "bad_date": 0
+    },
+    "legal_force": {
+      "empty": 78,
+      "placeholder": 2,
+      "bad_date": 0
+    },
+    "adopting_body": {
+      "empty": 28,
+      "placeholder": 42,
+      "bad_date": 0
+    },
+    "regulatory_body": {
+      "empty": 19,
+      "placeholder": 93272,
+      "bad_date": 0
+    },
+    "developer_body": {
+      "empty": 148355,
+      "placeholder": 3821,
+      "bad_date": 0
+    },
+    "region": {
+      "empty": 24,
+      "placeholder": 11,
+      "bad_date": 0
+    },
+    "place_of_adoption": {
+      "empty": 19,
+      "placeholder": 137,
+      "bad_date": 0
+    },
+    "database_section": {
+      "empty": 134,
+      "placeholder": 106,
+      "bad_date": 0
+    }
+  },
+  "missing_share": {
+    "date_published": 0.8836,
+    "ministry_registration_date": 0.8662,
+    "developer_body": 0.7049,
+    "date_modified": 0.4955,
+    "regulatory_body": 0.4321,
+    "gov_registration_number": 0.3703,
+    "official_publication_info": 0.1927,
+    "ekb_url": 0.1563,
+    "state_registry_number": 0.143,
+    "adilet_url": 0.0037,
+    "law_registry_number": 0.0021,
+    "legal_relation_area": 0.0018,
+    "database_section": 0.0011,
+    "place_of_adoption": 0.0007,
+    "legal_force": 0.0004,
+    "act_form": 0.0003,
+    "adopting_body": 0.0003,
+    "region": 0.0002,
+    "title": 0.0,
+    "description": 0.0,
+    "law_id": 0.0,
+    "is_repealed": 0.0,
+    "is_archive": 0.0,
+    "date_adopted": 0.0,
+    "source_id": 0.0
+  },
+  "multi_value": {
+    "act_form": {
+      "multi_value_share": 0.4256,
+      "max_values_per_act": 7,
+      "distinct_values": 75
+    },
+    "legal_relation_area": {
+      "multi_value_share": 0.7072,
+      "max_values_per_act": 12,
+      "distinct_values": 351
+    }
+  },
+  "consistency": {
+    "constant_columns": [
+      "is_archive"
+    ],
+    "duplicate_law_id": 0,
+    "duplicate_titles": 53916,
+    "modified_before_adopted": 2,
+    "published_before_adopted": 1,
+    "date_adopted_min": "1947-10-30",
+    "date_adopted_max": "2026-07-20",
+    "repealed_share": 0.3471
+  }
+}

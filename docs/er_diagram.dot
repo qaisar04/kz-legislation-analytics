@@ -1,0 +1,50 @@
+digraph ER {
+  graph [rankdir=LR, bgcolor="#fcfcfb", fontname="Helvetica", pad=0.3, nodesep=0.4, ranksep=1.0];
+  node  [shape=plain, fontname="Helvetica", fontsize=11];
+  edge  [color="#52514e", arrowhead=crow, arrowtail=tee, dir=both, fontsize=9];
+
+  act [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#2a78d6"><font color="white"><b>act</b> (215,889)</font></td></tr>
+    <tr><td align="left"><b>act_id</b> PK</td></tr>
+    <tr><td align="left">law_id UNIQUE</td></tr>
+    <tr><td align="left">title, description</td></tr>
+    <tr><td align="left">date_adopted, adoption_year, adoption_month</td></tr>
+    <tr><td align="left">date_modified, date_published</td></tr>
+    <tr><td align="left">is_repealed, adilet_url</td></tr>
+    <tr><td align="left" port="body">body_id FK</td></tr>
+    <tr><td align="left" port="region">region_id FK</td></tr>
+    <tr><td align="left" port="force">legal_force_id FK</td></tr>
+    <tr><td align="left" port="section">section_id FK</td></tr></table>>];
+
+  body [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>body</b> (4,251)</font></td></tr>
+    <tr><td align="left"><b>body_id</b> PK</td></tr><tr><td align="left">name, short_name</td></tr>
+    <tr><td align="left">body_type</td></tr></table>>];
+  region [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>region</b> (2,467)</font></td></tr>
+    <tr><td align="left"><b>region_id</b> PK</td></tr><tr><td align="left">name, short_name</td></tr>
+    <tr><td align="left">region_level</td></tr></table>>];
+  legal_force [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>legal_force</b> (42)</font></td></tr>
+    <tr><td align="left"><b>legal_force_id</b> PK</td></tr><tr><td align="left">name, short_name</td></tr>
+    <tr><td align="left">authority_level</td></tr></table>>];
+  section [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>section</b> (37)</font></td></tr>
+    <tr><td align="left"><b>section_id</b> PK</td></tr><tr><td align="left">name</td></tr></table>>];
+
+  act_area [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#1baf7a"><font color="white"><b>act_area</b> (428,099)</font></td></tr>
+    <tr><td align="left"><b>act_id</b> PK, FK</td></tr><tr><td align="left"><b>area_id</b> PK, FK</td></tr></table>>];
+  area [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>area</b> (351)</font></td></tr>
+    <tr><td align="left"><b>area_id</b> PK</td></tr><tr><td align="left">name</td></tr></table>>];
+  act_form [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#1baf7a"><font color="white"><b>act_form</b> (320,143)</font></td></tr>
+    <tr><td align="left"><b>act_id</b> PK, FK</td></tr><tr><td align="left"><b>form_id</b> PK, FK</td></tr></table>>];
+  form [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>form</b> (75)</font></td></tr>
+    <tr><td align="left"><b>form_id</b> PK</td></tr><tr><td align="left">name</td></tr></table>>];
+
+  body -> act:body; region -> act:region; legal_force -> act:force; section -> act:section;
+  act -> act_area; area -> act_area; act -> act_form; form -> act_form;
+}
