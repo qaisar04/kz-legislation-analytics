@@ -1,6 +1,6 @@
 # Kazakhstan Legislation Analytics
 
-Final project, *Programming for Data Analysis and Database* - topic **14**, team AAI-2603.
+Final project, *Programming for AI* - topic **14**, team AAI-2603.
 
 Analyses the dynamics of 215,889 Kazakh legal acts (1947-2026) by year, act form, adopting
 body, region and repeal status: chunked loading into Parquet with dtype optimisation, a
