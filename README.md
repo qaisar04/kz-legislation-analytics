@@ -7,11 +7,11 @@ body, region and repeal status: chunked loading into Parquet with dtype optimisa
 metadata quality audit, a normalised SQLite schema with 12 analytical queries (CTE, window
 functions), time-series analysis with a forecast-vs-baseline comparison, and a Streamlit dashboard.
 
-| Member | Main responsibility |
-|---|---|
-| Kaisar Baltabayev | Data loading (chunked CSV → Parquet, dtypes), benchmarks, console app & project structure |
-| Adilet Bekbulat | Metadata audit, normalisation, SQLite schema, ER diagram, SQL queries |
-| Yelarys Nurbakytuly | Time series, forecasting, visualisations, Streamlit dashboard |
+| Member              | Main responsibility                                                                       |
+|---------------------|-------------------------------------------------------------------------------------------|
+| Kaisar Baltabayev   | Data loading (chunked CSV → Parquet, dtypes), benchmarks, console app & project structure |
+| Adilet Bekbulat     | Metadata audit, normalisation, SQLite schema, ER diagram, SQL queries                     |
+| Yelarys Nurbakytuly | Time series, forecasting, visualisations, Streamlit dashboard                             |
 
 ## Data
 
@@ -80,12 +80,12 @@ resolve the many-to-many fields `legal_relation_area` and `act_form`.
 
 ## Key results
 
-| Comparison | Result |
-|---|---|
-| CSV (object dtype) vs Parquet, load time | ~1.2 s → ~0.15 s |
-| Peak memory: CSV object dtype vs Parquet (4 columns) | ~900 MB → ~200 MB |
-| On-disk size: CSV vs Parquet | 321 MB → 35 MB |
-| Forecast MAE (2023-2025 hold-out): naive baseline | 1,738.7 |
+| Comparison                                                 | Result                    |
+|------------------------------------------------------------|---------------------------|
+| CSV (object dtype) vs Parquet, load time                   | ~1.2 s → ~0.15 s          |
+| Peak memory: CSV object dtype vs Parquet (4 columns)       | ~900 MB → ~200 MB         |
+| On-disk size: CSV vs Parquet                               | 321 MB → 35 MB            |
+| Forecast MAE (2023-2025 hold-out): naive baseline          | 1,738.7                   |
 | Forecast MAE: seasonal naive / linear regression / 12-m MA | **207.3** / 224.4 / 374.2 |
 
 Exact numbers vary by machine; they are regenerated in `reports/tables/` on every run.
